@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "41daa150168462c32a5bf162e2d34b5e";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const searchMovies = async (query: string) => {
