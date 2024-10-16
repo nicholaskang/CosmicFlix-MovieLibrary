@@ -1,22 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MovieDetails from "./pages/MovieDetails";
-import SearchMovies from "./pages/SearchMovies";
+import { ChakraProvider } from "@chakra-ui/react";
+import App from "./App";
+import customTheme from "./theme/theme";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={<SearchMovies />}
-        />
-        <Route
-          path="/movie/:id"
-          element={<MovieDetails />}
-        />
-      </Routes>
-    </Router>
+    <ChakraProvider theme={customTheme}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
