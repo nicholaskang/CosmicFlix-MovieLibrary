@@ -7,7 +7,7 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
-// Colors designed for a dark, cinematic theme with blue accent
+// Define colors, using Vibrant Teal as the accent color
 const colors = {
   background: {
     900: "#000000", // Pure black background
@@ -17,11 +17,16 @@ const colors = {
   text: {
     primary: "#ffffff", // White for primary text
     secondary: "#b0b0b0", // Light gray for secondary text
+    teal500: "#00e5ff", // Bright teal for headings and larger text
+    teal600: "#00c0d4", // Slightly darker teal for hover effects and medium text
+    teal700: "#009aa8", // Darker teal for active states or small text
+    teal800: "#007580", // Dark teal for very small text or subtitles
   },
   accent: {
-    500: "#4a90e2", // Medium blue for primary accent (not too light or dark)
-    600: "#357ABD", // Slightly darker blue for hover effects
-    700: "#2a5b8c", // Darker blue for active states
+    500: "#00e5ff", // Vibrant teal for primary accents
+    600: "#00c0d4", // Slightly darker teal for hover effects
+    700: "#009aa8", // Darker teal for active states
+    800: "#007580", // Deep teal for subtle accents or disabled states
   },
   gray: {
     50: "#f7fafc",
@@ -46,20 +51,32 @@ const components = {
     },
     variants: {
       solid: {
-        bg: "accent.500",
-        color: "white",
+        bg: "accent.500", // Use the vibrant blue background color
+        color: "black", // Explicitly set text color to black
         _hover: {
-          bg: "accent.600",
+          bg: "accent.600", // Slightly darker blue on hover
+          color: "black", // Keep text color black on hover
         },
         _active: {
-          bg: "accent.700",
+          bg: "accent.700", // Even darker blue for active state
+          color: "black", // Keep text color black on active state
         },
       },
     },
   },
   Heading: {
     baseStyle: {
-      color: "accent.500", // Accent color for headings
+      color: "text.teal500", // Bright teal for main headings
+    },
+  },
+  Text: {
+    baseStyle: {
+      color: "text.primary", // Default text color is white
+    },
+    variants: {
+      subtitle: {
+        color: "text.teal700", // Darker teal for subtitles or secondary text
+      },
     },
   },
   Box: {

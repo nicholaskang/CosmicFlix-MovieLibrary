@@ -77,7 +77,8 @@ const SearchMovies: React.FC = () => {
     <Box
       maxW="1000px"
       mx="auto"
-      py={8}>
+      py={8}
+      px={{ base: 4, md: 8 }}>
       <Heading
         as="h1"
         textAlign="center"
@@ -90,7 +91,10 @@ const SearchMovies: React.FC = () => {
         as="form"
         onSubmit={handleSearch}
         display="flex"
-        mb={8}>
+        flexDirection={{ base: "column", md: "row" }} // Stack on small screens, horizontal on medium and up
+        alignItems="center" // Center align for small screens
+        justifyContent="center"
+        mb={16}>
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -98,12 +102,18 @@ const SearchMovies: React.FC = () => {
           size="lg"
           borderColor="gray.300"
           flex="1"
-          mr={2}
+          width={{ base: "100%", md: "auto" }} // Full width on small screens
+          maxWidth="800px"
+          minHeight="48px"
+          mb={{ base: 4, md: 0 }} // Add margin on small screens to separate from button
+          mr={{ base: 0, md: 2 }} // Remove right margin on small screens
         />
         <Button
           type="submit"
           colorScheme="blue"
-          size="lg">
+          size="lg"
+          width={{ base: "100%", md: "auto" }} // Full width on small screens
+        >
           Search
         </Button>
       </Box>
@@ -112,7 +122,9 @@ const SearchMovies: React.FC = () => {
       {movies.length > 0 ? (
         <Grid
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
-          gap={6}>
+          gap={6}
+          justifyItems="center"
+          alignItems="center">
           {movies.map((movie) => (
             <MovieCard
               key={movie.imdbID}
