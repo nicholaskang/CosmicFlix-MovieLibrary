@@ -81,13 +81,21 @@ const SearchMovies: React.FC = () => {
           minHeight="48px"
           mb={{ base: 4, md: 0 }}
           mr={{ base: 0, md: 2 }}
+          _focus={{
+            borderColor: "accent.500",
+            boxShadow: "0px 0px 8px #00e5ff",
+          }}
+          transition="0.3s ease-in-out"
         />
         <Button
           type="submit"
           colorScheme="blue"
           size="lg"
           width={{ base: "100%", md: "auto" }}
-          maxW={{ base: "400px", md: "150px" }}>
+          maxW={{ base: "400px", md: "150px" }}
+          _hover={{ bg: "accent.600", transform: "scale(1.02)" }}
+          _active={{ bg: "accent.700" }}
+          transition="all 0.3s ease">
           Search
         </Button>
       </Box>
