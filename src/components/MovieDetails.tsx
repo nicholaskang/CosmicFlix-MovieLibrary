@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Image, Text, Heading, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Text,
+  Heading,
+  Spinner,
+  Center,
+  Image,
+} from "@chakra-ui/react";
 import axios from "axios";
 
 const MovieDetails = () => {
@@ -24,16 +32,39 @@ const MovieDetails = () => {
 
   if (loading) {
     return (
-      <Spinner
-        size="xl"
-        color="brand.500"
-        mt={10}
-      />
+      <Center
+        minH="80vh"
+        bg="black">
+        <VStack spacing={4}>
+          {/* Simple Rotating Ring */}
+          <Box
+            position="relative"
+            width="60px"
+            height="60px">
+            <Spinner
+              thickness="4px"
+              speed="0.8s"
+              emptyColor="gray.700"
+              color="accent.500"
+              size="xl"
+            />
+          </Box>
+          <Text
+            fontSize="lg"
+            color="gray.300">
+            Loading movie details...
+          </Text>
+        </VStack>
+      </Center>
     );
   }
 
   if (!movie) {
-    return <Text>No movie details available.</Text>;
+    return (
+      <Text>
+        This movie seems to be lost in the cosmos. Try searching again.
+      </Text>
+    );
   }
 
   const imageUrl =
