@@ -22,7 +22,12 @@ const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
         overflow="hidden"
         shadow="lg"
         maxW="200px"
-        cursor="pointer">
+        cursor="pointer"
+        transition="transform 0.3s ease, box-shadow 0.3s ease"
+        _hover={{
+          transform: "scale(1.05)",
+          boxShadow: "2xl",
+        }}>
         <Image
           src={imageUrl}
           alt={movie.Title || "Movie poster"}
