@@ -21,6 +21,7 @@ const SearchMovies: React.FC = () => {
   // Fetch initial movies from 2024 on component mount
   const fetchInitialMovies = async () => {
     setIsLoading(true);
+    console.log("OMDb API Key:", API_KEY);
     const response = await axios.get(
       `http://www.omdbapi.com/?s=movie&y=2024&apikey=${API_KEY}`
     );
