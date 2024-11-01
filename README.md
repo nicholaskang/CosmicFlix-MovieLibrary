@@ -1,4 +1,4 @@
-## Movie Search App
+## Movie Library Search App
 
 ### How to Run the App
 
