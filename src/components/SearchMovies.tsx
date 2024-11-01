@@ -120,7 +120,6 @@ const SearchMovies: React.FC = () => {
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
           gap={6}
           justifyItems="center"
-          alignItems="center"
           alignItems="start">
           {movies.map((movie) => (
             <MovieCard
