@@ -22,8 +22,8 @@ A simple, responsive movie library search application powered by the [OMDb API](
 1. **Clone the repository**:
 
 ```
-git clone https://github.com/your-username/movie-library-search-app.git
-cd movie-library-search-app
+git clone https://github.com/nicholaskang/ReactFlix.git
+cd ReactFlix
 ```
 
 2. **Install dependencies**:
