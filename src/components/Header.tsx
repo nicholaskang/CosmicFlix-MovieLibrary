@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Box
       as="header"
-      bg="brand.600"
+      bg="brand.700"
       py={4}
       px={8}
       color="white">
