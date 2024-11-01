@@ -50,13 +50,16 @@ const SearchMovies: React.FC = () => {
       maxW="1000px"
       mx="auto"
       py={8}
-      px={{ base: 4, md: 0 }}>
+      mt={8}>
       {/* Header */}
       <Heading
         as="h1"
         textAlign="center"
-        mb={4}>
-        Movie Search
+        fontSize="2.5rem"
+        px={4}
+        mb={{ base: 8, md: 16 }}
+        color="primary">
+        Search the Cosmos for a Star Movie
       </Heading>
 
       {/* Search Form */}
@@ -64,9 +67,10 @@ const SearchMovies: React.FC = () => {
         as="form"
         onSubmit={handleSearch}
         display="flex"
-        flexDirection={{ base: "column", md: "row" }}
+        flexDirection="column"
         alignItems="center"
-        mb={12}
+        px={4}
+        mb={20}
         maxW="600px"
         mx="auto">
         <Input
@@ -76,11 +80,10 @@ const SearchMovies: React.FC = () => {
           size="lg"
           borderColor="gray.300"
           flex="1"
-          width={{ base: "100%", md: "auto" }}
-          maxW="400px"
+          width="100%"
+          maxWidth={{ sm: "400px" }}
           minHeight="48px"
-          mb={{ base: 4, md: 0 }}
-          mr={{ base: 0, md: 2 }}
+          mb={4}
           _focus={{
             borderColor: "accent.500",
             boxShadow: "0px 0px 8px #00e5ff",
@@ -89,10 +92,9 @@ const SearchMovies: React.FC = () => {
         />
         <Button
           type="submit"
-          colorScheme="blue"
           size="lg"
-          width={{ base: "100%", md: "auto" }}
-          maxW={{ base: "400px", md: "150px" }}
+          width="100%"
+          maxWidth={{ sm: "400px" }}
           _hover={{ bg: "accent.600", transform: "scale(1.02)" }}
           _active={{ bg: "accent.700" }}
           transition="all 0.3s ease">
@@ -118,7 +120,8 @@ const SearchMovies: React.FC = () => {
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
           gap={6}
           justifyItems="center"
-          alignItems="center">
+          alignItems="center"
+          alignItems="start">
           {movies.map((movie) => (
             <MovieCard
               key={movie.imdbID}
@@ -127,12 +130,22 @@ const SearchMovies: React.FC = () => {
           ))}
         </Grid>
       ) : (
-        <Heading
-          as="h3"
-          size="md"
-          textAlign="center">
-          No movies found
-        </Heading>
+        <>
+          <Heading
+            as="h3"
+            size="md"
+            textAlign="center"
+            marginTop={24}>
+            Uh-oh, the movies are hiding!
+          </Heading>
+          <Heading
+            as="h3"
+            size="md"
+            textAlign="center"
+            marginTop={4}>
+            Enter another title to catch them!
+          </Heading>
+        </>
       )}
     </Box>
   );

@@ -45,11 +45,14 @@ const MovieDetails = () => {
     <Box
       maxW="800px"
       mx="auto"
-      p={6}>
+      p={6}
+      mt={6}
+      mb={12}>
       <Image
         src={imageUrl}
         alt={movie.Title || "Movie poster"}
         borderRadius="lg"
+        mb={8}
         fallbackSrc="https://via.placeholder.com/500x750?text=No+Image"
       />
       <Heading

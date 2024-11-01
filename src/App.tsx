@@ -6,12 +6,17 @@ import MovieDetails from "./components/MovieDetails";
 import Header from "./components/Header";
 import About from "./components/About";
 import PageTransition from "./components/PageTransition";
+import FloatingStarParticles from "./components/FloatingStarParticles";
+import { Box } from "@chakra-ui/react";
 
 const App: React.FC = () => {
   const location = useLocation();
 
   return (
-    <>
+    <Box
+      position="relative"
+      zIndex="1">
+      <FloatingStarParticles />
       <Header />
       <AnimatePresence mode="wait">
         <Routes
@@ -43,7 +48,7 @@ const App: React.FC = () => {
           />
         </Routes>
       </AnimatePresence>
-    </>
+    </Box>
   );
 };
 

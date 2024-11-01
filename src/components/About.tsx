@@ -6,53 +6,56 @@ const About = () => {
       maxW="800px"
       mx="auto"
       p={8}
-      textAlign="center">
-      <VStack spacing={4}>
+      my={10}
+      textAlign="center"
+      color="gray.200"
+      borderRadius="lg"
+      boxShadow="lg">
+      <VStack spacing={6}>
         <Heading
           as="h1"
           size="2xl"
-          color="brand.700">
-          About ReactFlix
+          color="text.primary"
+          mb={6}>
+          Welcome to CosmicFlix
         </Heading>
 
         <Image
-          src="/images/popcorn-movie-night-med.jpg"
-          alt="Person lying on a couch, holding a remote control, with popcorn scattered on their clothes and a bowl of popcorn nearby, enjoying a movie night."
-          width={{ base: "600px", md: "1200px" }}
+          src="/images/screen-under-the-stars.jpg"
+          alt="A person sits outdoors, gazing at a blank movie screen under a starry sky, searching for the perfect film among the stars in a tranquil, open-air cinema setting."
+          width={{ base: "300px", md: "400px" }}
           height="auto"
           loading="lazy"
-          srcSet="/images/popcorn-movie-night-small.jpg 600w, /images/popcorn-movie-night-med.jpg 1200w"
           sizes="(max-width: 600px) 600px, 1200px"
           borderRadius="lg"
+          boxShadow="lg"
+          mb={2}
         />
 
         <Text
-          fontSize="lg"
-          color="gray.600">
-          Welcome to <strong>ReactFlix</strong>! 🎬🍿
+          fontSize="md"
+          color="gray.200">
+          Ever drifted through an endless galaxy of movie apps, searching for
+          the perfect film? We know the feeling! That’s why we created{" "}
+          <strong>CosmicFlix</strong>—your guiding star in the vast universe of
+          movies.
         </Text>
 
         <Text
           fontSize="md"
-          color="gray.600">
-          Ever found yourself endlessly scrolling through movie apps, trying to
-          find something good to watch? Yeah, we feel you! That's why we built
-          ReactFlix – your one-stop shop for all things movies.
+          color="gray.200">
+          Whether you're on a quest to rediscover a hidden indie gem from the
+          '90s or catch the latest blockbuster supernova,{" "}
+          <strong>CosmicFlix</strong> is here to light your way. Just enter a
+          title, grab some popcorn, and let us connect the stars to reveal your
+          next binge-worthy adventure!
         </Text>
 
         <Text
           fontSize="md"
-          color="gray.600">
-          Whether you're searching for that obscure indie film from the 90s or
-          the latest blockbuster, we've got you covered. Just type in a title,
-          grab some popcorn, and let ReactFlix help you find your next
-          binge-worthy flick!
-        </Text>
-
-        <Text
-          fontSize="md"
-          color="gray.600">
-          So sit back, relax, and let the movie magic begin! 🍿✨
+          color="gray.200">
+          So lean back, gaze at the screen, and let the cosmic magic unfold.
+          🍿🌌✨
         </Text>
       </VStack>
     </Box>

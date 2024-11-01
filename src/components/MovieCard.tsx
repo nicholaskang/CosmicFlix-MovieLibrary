@@ -40,7 +40,7 @@ const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
           <Text
             fontWeight="bold"
             fontSize="lg"
-            noOfLines={1}>
+            noOfLines={2}>
             {movie.Title}
           </Text>
           <Text color="gray.500">{movie.Year}</Text>

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, Spacer, HStack } from "@chakra-ui/react";
+import { Box, Flex, Text, Link, Spacer, HStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Header = () => {
@@ -10,17 +10,33 @@ const Header = () => {
       px={8}
       color="white">
       <Flex alignItems="center">
-        <Heading
-          as="h1"
-          size="lg">
-          <RouterLink to="/">ReactFlix</RouterLink>
-        </Heading>
+        <Text
+          fontSize="lg"
+          color="blue.400"
+          fontWeight="bold"
+          _hover={{
+            color: "accent.600",
+            transform: "scale(1.02)",
+            transition: "transform 0.3s ease, color 0.3s ease",
+          }}
+          _active={{
+            color: "accent.700",
+          }}
+          transition="transform 0.3s ease, color 0.3s ease">
+          <RouterLink to="/">CosmicFlix</RouterLink>
+        </Text>
         <Spacer />
         <HStack spacing={6}>
           <Link
             as={RouterLink}
             to="/about"
-            _hover={{ textDecoration: "underline" }}>
+            color="blue.400"
+            fontWeight="bold"
+            _hover={{
+              color: "accent.600",
+              transform: "scale(1.02)",
+              transition: "transform 0.3s ease, color 0.3s ease",
+            }}>
             About
           </Link>
         </HStack>

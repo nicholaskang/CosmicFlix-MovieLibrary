@@ -1,3 +1,4 @@
+// theme.ts
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
@@ -12,18 +13,21 @@ const colors = {
     700: "#1a1a1a",
   },
   text: {
-    primary: "#ffffff",
-    secondary: "#b0b0b0",
-    teal500: "#00e5ff",
-    teal600: "#00c0d4",
-    teal700: "#009aa8",
-    teal800: "#007580",
+    primary: "#EAEAEA",
+    secondary: "#B0B0B0",
+    electric500: "#3A86FF",
+    electric600: "#3367CC",
+    electric700: "#2851A3",
   },
   accent: {
-    500: "#00e5ff",
-    600: "#00c0d4",
-    700: "#009aa8",
-    800: "#007580",
+    100: "#D7EAFF",
+    200: "#ADCFFF",
+    300: "#85BBFF",
+    400: "#5AA2FF",
+    500: "#3A86FF",
+    600: "#3367CC",
+    700: "#2851A3",
+    purple500: "#9D4EDD",
   },
   gray: {
     50: "#f7fafc",
@@ -39,54 +43,61 @@ const colors = {
   },
 };
 
-const components = {
-  Button: {
-    baseStyle: {
-      fontWeight: "bold",
-      borderRadius: "lg",
-    },
-    variants: {
-      solid: {
-        bg: "accent.500",
-        color: "black",
-        _hover: {
-          bg: "accent.600",
-          color: "black",
-        },
-        _active: {
-          bg: "accent.700",
-          color: "black",
-        },
-      },
-    },
-  },
-  Heading: {
-    baseStyle: {
-      color: "text.teal500",
-    },
-  },
-  Text: {
-    baseStyle: {
-      color: "text.primary",
-    },
-    variants: {
-      subtitle: {
-        color: "text.teal700",
-      },
-    },
-  },
-  Box: {
-    baseStyle: {
-      bg: "background.900",
-      color: "text.primary",
-    },
-  },
+const fonts = {
+  heading: `'Montserrat', sans-serif`,
+  body: `'Roboto Mono', monospace`,
 };
 
 const theme = extendTheme({
   config,
   colors,
-  components,
+  fonts,
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: "bold",
+        borderRadius: "lg",
+      },
+      variants: {
+        solid: {
+          bg: "accent.500",
+          color: "black",
+          _hover: {
+            bg: "accent.600",
+            color: "black",
+          },
+          _active: {
+            bg: "accent.700",
+            color: "black",
+          },
+        },
+      },
+      defaultProps: {
+        variant: "solid",
+      },
+    },
+    Heading: {
+      baseStyle: {
+        color: "text.electric500",
+      },
+    },
+    Text: {
+      baseStyle: {
+        color: "text.primary",
+      },
+      variants: {
+        subtitle: {
+          color: "accent.purple500",
+        },
+      },
+    },
+    Box: {
+      baseStyle: {
+        bg: "background.900",
+        color: "text.primary",
+      },
+    },
+  },
   styles: {
     global: {
       "html, body": {
