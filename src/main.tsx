@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import App from "./App";
 import customTheme from "./theme/theme";
+import { Analytics } from "@vercel/analytics/react";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           initialColorMode={customTheme.config.initialColorMode}
         />
         <App />
+        <Analytics />
       </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>
