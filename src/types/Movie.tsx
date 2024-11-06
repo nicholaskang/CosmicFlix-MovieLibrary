@@ -4,4 +4,7 @@ export interface Movie {
   Poster: string;
   Year: string;
   Rated?: string;
+  Released?: string;
+  Genre?: string;
+  Plot?: string;
 }

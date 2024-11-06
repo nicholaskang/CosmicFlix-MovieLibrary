@@ -25,7 +25,7 @@ const SearchMovies: React.FC = () => {
   // Handle search submission, fetching movies based on user query
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true); // Start loading on search submit
+    setIsLoading(true);
     const response = await axios.get(
       `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
     );
@@ -95,8 +95,9 @@ const SearchMovies: React.FC = () => {
         </Button>
       </Box>
 
-      {/* Movie Grid with Skeleton Loading */}
+      {/* Movie Results */}
       {isLoading ? (
+        // Loading State
         <Grid
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
           gap={6}>
@@ -108,12 +109,14 @@ const SearchMovies: React.FC = () => {
             />
           ))}
         </Grid>
-      ) : movies.length > 0 ? (
+      ) : // Movie List
+      movies.length > 0 ? (
         <Grid
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
           gap={6}
           justifyItems="center"
-          alignItems="start">
+          alignItems="start"
+          mx={8}>
           {movies.map((movie) => (
             <MovieCard
               key={movie.imdbID}
@@ -122,6 +125,7 @@ const SearchMovies: React.FC = () => {
           ))}
         </Grid>
       ) : (
+        // Empty State
         <>
           <Heading
             as="h3"
