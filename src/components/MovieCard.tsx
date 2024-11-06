@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { Movie } from "../types/Movie";
+import { IMovie } from "../types/Movie";
 
-const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
+const MovieCard: React.FC<{ movie: IMovie }> = ({ movie }) => {
   const imageUrl =
     movie.Poster !== "N/A"
       ? movie.Poster
