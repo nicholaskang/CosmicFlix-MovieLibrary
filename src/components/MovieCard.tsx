@@ -1,13 +1,7 @@
 import React from "react";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
-interface Movie {
-  imdbID: string;
-  Title: string;
-  Poster: string;
-  Year: string;
-}
+import { Movie } from "../types/movie";
 
 const MovieCard: React.FC<{ movie: Movie }> = ({ movie }) => {
   const imageUrl =

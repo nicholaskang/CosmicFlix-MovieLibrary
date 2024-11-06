@@ -2,19 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Box, Grid, Input, Button, Heading, Skeleton } from "@chakra-ui/react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
-
-interface Movie {
-  imdbID: string;
-  Title: string;
-  Poster: string;
-  Year: string;
-  Rated?: string;
-}
+import { Movie } from "../types/movie";
 
 const SearchMovies: React.FC = () => {
   const [query, setQuery] = useState<string>("");
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // Loading state
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
