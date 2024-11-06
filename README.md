@@ -57,8 +57,6 @@ npm run dev
 
 - `src/:` Contains the main source code.
   - `components/:` Reusable components like MovieCard and SearchMovies.
-  - `pages/:` Different pages like MovieDetails and Home.
-  - `assets/:` Static assets like images or SVGs.
 - `public/:` Public files and assets.
 
 ## Technologies Used
