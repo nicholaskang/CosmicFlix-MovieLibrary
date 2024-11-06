@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Grid, Input, Button, Heading, Skeleton } from "@chakra-ui/react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
-import { Movie } from "../types/movie";
+import { Movie } from "../types/Movie";
 
 const SearchMovies: React.FC = () => {
   const [query, setQuery] = useState<string>("");
