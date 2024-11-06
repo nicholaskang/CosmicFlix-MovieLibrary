@@ -41,8 +41,7 @@ const MovieDetails = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      p={6}
-      bg="black">
+      p={6}>
       {loading ? (
         // Loading State
         <Center minH="80vh">
